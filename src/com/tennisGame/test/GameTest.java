@@ -17,12 +17,20 @@ public class GameTest {
 		ron = new Player("Ron");
 		game = new Game(harry, ron);
 	}
-
+	
+	/**
+	 * This test method is to evaluate beginning 
+	 * of the game with LOVE score for both players
+	 */
 	@Test
 	public void checkLovescore() {
 		Assert.assertEquals("Love - Love", game.getScore());
 	}
 
+	/**
+	 * This test method is to evaluate different scores 
+	 * of the game for both players
+	 */
 	@Test
 	public void testScores() {
 		harry.winChance();
@@ -31,7 +39,11 @@ public class GameTest {
 		ron.winChance();
 		Assert.assertEquals("Fifteen - Thirty", game.getScore());
 	}
-
+	
+	/**
+	 * This test method is to evaluate DEUCE score 
+	 * of the game
+	 */
 	@Test
 	public void testDeuce() {
 		harry.winChance();
@@ -43,6 +55,10 @@ public class GameTest {
 		Assert.assertEquals("Deuce", game.getScore());
 	}
 
+	/**
+	 * This test method is to evaluate advantage
+	 * case of either player
+	 */
 	@Test
 	public void testAdvantage() {
 		harry.winChance();
@@ -54,7 +70,10 @@ public class GameTest {
 		harry.winChance();
 		Assert.assertEquals("Advantage Harry", game.getScore());
 	}
-
+	/**
+	 * This test method is to evaluate winning
+	 * case of either player
+	 */
 	@Test
 	public void testWinner() {
 		harry.winChance();
